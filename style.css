@@ -22,42 +22,43 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    padding: 15px; /* 稍微縮小外邊距 */
     overflow-x: hidden;
 }
 
 .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px; /* 縮小最大寬度，更貼合手機操作 */
 }
 
 header h1 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
     color: var(--accent-color);
 }
 
 .input-group {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .input-group label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 input[type="time"] {
     background: var(--btn-bg);
     border: none;
     color: white;
-    font-size: 2rem;
-    padding: 10px;
+    font-size: 1.8rem; /* 稍微縮小輸入框字體 */
+    padding: 8px;
     border-radius: 10px;
     text-align: center;
     width: 100%;
@@ -66,27 +67,28 @@ input[type="time"] {
 
 .toggle-group {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.9rem;
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .calc-btn {
     background: var(--btn-bg);
     border: 2px solid transparent;
     color: white;
-    padding: 25px 10px;
-    font-size: 1.2rem;
+    padding: 20px 5px; /* 縮小按鈕內距 */
+    font-size: 1.1rem;
     font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
@@ -105,27 +107,37 @@ input[type="time"] {
 
 .result-area {
     background: var(--card-bg);
-    padding: 30px 20px;
+    padding: 20px 15px;
     border-radius: 20px;
     text-align: center;
     border-left: 5px solid var(--accent-color);
+    word-wrap: break-word; /* 防止文字溢出 */
 }
 
 .result-area .label {
     color: var(--text-secondary);
-    margin-bottom: 10px;
-    font-size: 1rem;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
 }
 
 .result-area .result {
-    font-size: 4rem;
+    font-size: 15vw; /* 使用視窗寬度單位 */
+    max-font-size: 4rem; /* 模擬 clamp 行為 */
     font-weight: 800;
     margin-bottom: 5px;
     color: var(--accent-color);
+    line-height: 1.1;
+}
+
+/* 在較大螢幕上限制結果字體大小 */
+@media (min-width: 400px) {
+    .result-area .result {
+        font-size: 3.5rem;
+    }
 }
 
 .result-area .detail {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
