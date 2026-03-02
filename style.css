@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
+    max-width: 100%; /* 全域限制最大寬度 */
 }
 
 body {
@@ -22,19 +23,21 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding: 15px; /* 稍微縮小外邊距 */
+    padding: 10px; /* 進一步縮小邊距 */
     overflow-x: hidden;
+    width: 100vw;
 }
 
 .container {
     width: 100%;
-    max-width: 400px; /* 縮小最大寬度，更貼合手機操作 */
+    max-width: 360px; /* 針對大多數手機優化的寬度 */
+    margin: 0 auto;
 }
 
 header h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
     color: var(--accent-color);
 }
 
@@ -45,24 +48,27 @@ header h1 {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .input-group label {
     margin-bottom: 8px;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 input[type="time"] {
     background: var(--btn-bg);
-    border: none;
+    border: 1px solid #444; /* 增加極淡邊框增加層次 */
     color: white;
-    font-size: 1.8rem; /* 稍微縮小輸入框字體 */
-    padding: 8px;
+    font-size: 1.6rem;
+    padding: 10px 5px;
     border-radius: 10px;
     text-align: center;
     width: 100%;
     outline: none;
+    -webkit-appearance: none; /* 消除 iOS 預設樣式 */
+    display: block;
 }
 
 .toggle-group {
@@ -74,70 +80,68 @@ input[type="time"] {
     justify-content: space-between;
     align-items: center;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .calc-btn {
     background: var(--btn-bg);
     border: 2px solid transparent;
     color: white;
-    padding: 20px 5px; /* 縮小按鈕內距 */
-    font-size: 1.1rem;
+    padding: 18px 5px;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.1s ease;
+    width: 100%;
 }
 
 .calc-btn:active {
     background: var(--accent-color);
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
 .calc-btn.active {
     border-color: var(--accent-color);
-    background: #4d4d4d;
+    background: #444;
 }
 
 .result-area {
     background: var(--card-bg);
-    padding: 20px 15px;
+    padding: 20px 10px;
     border-radius: 20px;
     text-align: center;
     border-left: 5px solid var(--accent-color);
-    word-wrap: break-word; /* 防止文字溢出 */
+    width: 100%;
+    overflow: hidden; /* 強制切除可能的溢出 */
 }
 
 .result-area .label {
     color: var(--text-secondary);
     margin-bottom: 5px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .result-area .result {
-    font-size: 15vw; /* 使用視窗寬度單位 */
-    max-font-size: 4rem; /* 模擬 clamp 行為 */
+    /* 使用 clamp 確保字體在小螢幕不超過視窗，在大螢幕不過大 */
+    font-size: clamp(2.5rem, 15vw, 3.5rem); 
     font-weight: 800;
     margin-bottom: 5px;
     color: var(--accent-color);
-    line-height: 1.1;
-}
-
-/* 在較大螢幕上限制結果字體大小 */
-@media (min-width: 400px) {
-    .result-area .result {
-        font-size: 3.5rem;
-    }
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
 .result-area .detail {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 
