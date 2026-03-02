@@ -1,0 +1,16 @@
+{
+  "name": "我不會算時間 - 截買計算器",
+  "short_name": "截買計算",
+  "description": "德州撲克比賽員工專用的截止買入時間計算工具",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "貓咪.JPG",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

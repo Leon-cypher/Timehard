@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>撲克截買計算器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="apple-touch-icon" href="貓咪.JPG">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>截買時間計算</h1>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="startTime">比賽開始時間</label>
+                <input type="time" id="startTime" value="17:00">
+            </div>
+
+            <div class="toggle-group">
+                <span>包含 5 分鐘休息</span>
+                <label class="switch">
+                    <input type="checkbox" id="hasBreak" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="button-grid">
+                <button class="calc-btn" data-base="95">3400</button>
+                <button class="calc-btn" data-base="125">6600</button>
+                <button class="calc-btn" data-base="155">11000</button>
+                <button class="calc-btn" data-base="185">21500</button>
+            </div>
+
+            <div class="result-area" id="resultArea">
+                <p class="label">截止買入時間</p>
+                <p class="result" id="resultTime">-- : --</p>
+                <p class="detail" id="resultDetail">請選擇比賽項目</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 我不會算時間</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
