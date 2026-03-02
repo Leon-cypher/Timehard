@@ -1,10 +1,10 @@
-const CACHE_NAME = 'poker-calc-v1';
+const CACHE_NAME = 'poker-calc-v2';
 const ASSETS = [
     './index.html',
     './style.css',
     './app.js',
     './manifest.json',
-    './貓咪.JPG'
+    './貓咪.jpg'
 ];
 
 // 安裝並快取資源

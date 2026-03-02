@@ -8,9 +8,10 @@
   "theme_color": "#1a1a1a",
   "icons": [
     {
-      "src": "貓咪.JPG",
+      "src": "貓咪.jpg",
       "sizes": "192x192 512x512",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }
